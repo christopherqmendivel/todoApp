@@ -1,0 +1,22 @@
+{
+  "name": "todo-app-main",
+  "version": "1.0.0",
+  "description": "Frontend Mentor - Todo app",
+  "main": "index.js",
+  "scripts": {
+    "compilar:sass": "sass src/scss:build/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christopherqmendivel/todoApp.git"
+  },
+  "author": "Christopher Quiroz Mendivel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christopherqmendivel/todoApp/issues"
+  },
+  "homepage": "https://github.com/christopherqmendivel/todoApp#readme",
+  "devDependencies": {
+    "sass": "^1.52.1"
+  }
+}
