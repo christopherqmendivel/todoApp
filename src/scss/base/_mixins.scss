@@ -1,5 +1,6 @@
 @use 'variables' as v;
 
+// Media queries
 @mixin telefono {
     @media(min-width: v.$telefono) {
         @content;
@@ -19,4 +20,10 @@
     @media(min-width: v.$desktopXL) {
         @content;
     }
+}
+
+// Clean button
+@mixin clean_button {
+    border: none;
+    background: none;
 }

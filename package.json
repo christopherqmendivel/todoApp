@@ -4,7 +4,7 @@
   "description": "Frontend Mentor - Todo app",
   "main": "index.js",
   "scripts": {
-    "compilar:sass": "sass src/scss:build/css"
+    "compilar:sass": "sass --watch src/scss:build/css"
   },
   "repository": {
     "type": "git",

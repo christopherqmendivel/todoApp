@@ -1,13 +1,30 @@
 // Tipografia
-$fuente_principal: 'Montserrat', sans-serif;
+$fuente_principal: 'Josefin Sans', sans-serif;;
 
-// Colores
-$verde: #4CB8B3;
-$rosa: #F53756;
-$amarillo: #FEF46D;
-$morado: #752f97;
-$negro: #000000;
-$blanco: #FFFFFF; 
+// Colors
+
+// ###Primary
+$brightBlue: hsl(220, 98%, 61%);
+$colorGradient: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+
+/* ### Neutral
+### Light Theme */
+$lightGray: hsl(0, 0%, 98%);
+$lightGrayish: hsl(236, 33%, 92%);
+$light_grayishBlue: hsl(233, 11%, 84%);
+$dark_grayishBlue: hsl(236, 9%, 61%);
+$very_darkGrayish: hsl(235, 19%, 35%);
+
+
+// ### Dark Theme
+$darkBlue: hsl(235, 21%, 11%);
+$dark_desaturatedBlue: hsl(235, 24%, 19%);
+$light_grayishBlue: hsl(234, 39%, 85%);
+$light_grayishHover: hsl(236, 33%, 92%);
+$dark_grayishBlue: hsl(234, 11%, 52%);
+$very_dark_grayishBlue: hsl(233, 14%, 35%);
+$very_dark_grayishBlue: hsl(237, 14%, 26%);
+
 
 // Tamaños de Media Queries
 $telefono: 480px;

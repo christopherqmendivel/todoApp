@@ -1,23 +1,131 @@
+/* ### Neutral
+### Light Theme */
 html {
   font-size: 62.5%;
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 *,
 *:before,
 *:after {
   box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-size: 1.6rem;
 }
 
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 body {
-  background: #000;
+  background-color: hsl(235deg, 21%, 11%);
+}
+
+.container .form-todo, .container .todo-container, .container .filters {
+  width: 90%;
+  margin: auto;
+}
+
+.header {
+  background-image: url(/images/bg-mobile-dark.jpg);
+  background-size: cover;
+  height: 30vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 2.5rem;
+}
+.header .h1-title, .header .btn {
+  padding-top: 5rem;
+}
+.header .h1-title {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  color: hsl(0deg, 0%, 98%);
+}
+.header .btn {
+  border: none;
+  background: none;
+}
+
+.form-todo .circle {
+  width: 3rem;
+  height: 3rem;
+  background-color: red;
+  border-radius: 50%;
+}
+.form-todo .todo-ipt {
+  padding: 2rem;
+  outline: none;
+  border: none;
+  background-color: hsl(235deg, 24%, 19%);
+  width: 100%;
+  border-radius: 0.6rem;
+  transform: translateY(-11rem);
+}
+
+.todo-container {
+  background-color: hsl(235deg, 24%, 19%);
+  border-radius: 0.6rem;
+}
+.todo-container .list-todo {
+  margin: 0 auto;
+}
+.todo-container .list-todo .element {
+  padding: 2rem;
+  color: hsl(0deg, 0%, 98%);
+  border-bottom: 0.1rem solid hsl(237deg, 14%, 26%);
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.todo-container .list-todo .element .circle {
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0.2rem solid hsl(237deg, 14%, 26%);
+  border-radius: 50%;
+}
+.todo-container .items-clear {
+  display: flex;
+  justify-content: space-between;
+}
+.todo-container .item-left, .todo-container .clear-completed {
+  display: inline-block;
+  padding: 2rem;
+  color: hsl(234deg, 11%, 52%);
+}
+
+.filters {
+  background-color: hsl(235deg, 24%, 19%);
+  padding: 2rem;
+  text-align: center;
+  margin-top: 1rem !important;
+  border-radius: 0.6rem;
+}
+.filters span {
+  color: hsl(234deg, 11%, 52%);
+  margin: 0 2rem;
+  font-weight: 700;
+}
+
+footer {
+  margin-top: 5rem;
+  text-align: center;
+}
+footer p {
+  color: hsl(234deg, 11%, 52%);
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -3,16 +3,25 @@
 html {
     font-size: 62.5%;
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    
 }
 *,
 *:before,
 *:after {
     box-sizing: inherit;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     font-family: v.$fuente_principal;
     font-size: 1.6rem;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none
 }
