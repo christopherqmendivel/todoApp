@@ -73,6 +73,7 @@ body {
             position: absolute;
             z-index: 10;
             left: 1.7rem;
+            
     }
 
     .todo-ipt {
@@ -92,6 +93,9 @@ body {
         z-index: 10;
         right: 1.7rem;
         color: white;
+        border: none;
+        cursor: pointer;
+        display: none;
     }
 }
 
@@ -112,10 +116,15 @@ body {
             justify-content: space-between;
             align-items: center;
 
-            .firts_elements {
+            .first-element {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+
+                .list {
+                    color: v.$light_grayishBlue;
+
+                }
             }
 
             .circle {
@@ -125,10 +134,20 @@ body {
                 border: .2rem solid v.$very_dark_grayishBlue;
                 border-radius: 50%;
                 margin-right: 1.5rem;
-                transition: 1s;
+                transition: .5s;
+                cursor: pointer;
 
             }
 
+            .first-element .active {
+                background-image: url('/images/icon-check.svg'), v.$colorCheckBG;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            .img_cross {
+                cursor: pointer;
+            }
         }
     }
 
@@ -138,7 +157,7 @@ body {
         justify-content: space-between;
     }
 
-    .item-left,
+    .item-count-left,
     .clear-completed {
         display: inline-block;
         padding: 2rem;

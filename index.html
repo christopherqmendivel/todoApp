@@ -12,17 +12,6 @@
 
   <title>Frontend Mentor | Todo app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution {
-      font-size: 11px;
-      text-align: center;
-    }
-
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
-  </style>
 </head>
 
 <body>
@@ -35,47 +24,48 @@
       <form class="form-todo">
         <span class="circle"></span>
         <input type="text" class="todo-ipt" placeholder="Create a new todo...">
-        <span class="icon-add-list">+</span>
+        <input type="submit" class="icon-add-list" value="+"></span>
       </form>
 
       <!-- Container todo-list -->
       <div class="todo-container">
         <ul class="list-todo">
           <li class="element">
-            <div class="firts_elements">
+            <div class="first-element">
               <span class="circle"></span>
               <span class="list">Complete online JavaScript course</span>
             </div>
 
-            <img src="./images/icon-cross.svg" alt="close">
+            <img src="./images/icon-cross.svg" class="img_cross" alt="close">
           </li>
+          
           <li class="element">
-            <div class="firts_elements">
+            <div class="first-element">
               <span class="circle"></span>
               <span class="list">Jog around the park 3x</span>
             </div>
             
-            <img src="./images/icon-cross.svg" alt="close">
+            <img src="./images/icon-cross.svg" class="img_cross" alt="close">
           </li>
           <li class="element">
-            <div class="firts_elements">
+            <div class="first-element">
               <span class="circle"></span>
               <span class="list">10 minutes meditation</span>
             </div>
             
-            <img src="./images/icon-cross.svg" alt="close">
+            <img src="./images/icon-cross.svg" class="img_cross" alt="close">
           </li>
           <li class="element">
-            <div class="firts_elements">
+            <div class="first-element">
               <span class="circle"></span>
               <span class="list">Read for 1 hour</span>
             </div>
             
-            <img src="./images/icon-cross.svg" alt="close">
+            <img src="./images/icon-cross.svg" class="img_cross" alt="close">
           </li>
         </ul>
         <div class="items-clear">
-          <span class="item-left">5 items left</span>
+          <span class="item-count-left"></span>
           <a href="#" class="clear-completed">Clear Completed</a>
         </div>
       </div>
@@ -96,11 +86,8 @@
   </main>
 
 
-
-  <!-- <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
+  <!-- SCRIPTS -->
+  <script src="/js/app.js"></script>
 </body>
 
 </html>

@@ -102,6 +102,9 @@ body {
   z-index: 10;
   right: 1.7rem;
   color: white;
+  border: none;
+  cursor: pointer;
+  display: none;
 }
 
 .todo-container {
@@ -120,10 +123,13 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.todo-container .list-todo .element .firts_elements {
+.todo-container .list-todo .element .first-element {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.todo-container .list-todo .element .first-element .list {
+  color: hsl(234deg, 39%, 85%);
 }
 .todo-container .list-todo .element .circle {
   display: inline-block;
@@ -132,13 +138,22 @@ body {
   border: 0.2rem solid hsl(237deg, 14%, 26%);
   border-radius: 50%;
   margin-right: 1.5rem;
-  transition: 1s;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.todo-container .list-todo .element .first-element .active {
+  background-image: url("/images/icon-check.svg"), linear-gradient(hsl(192deg, 100%, 67%), hsl(280deg, 87%, 65%));
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.todo-container .list-todo .element .img_cross {
+  cursor: pointer;
 }
 .todo-container .items-clear {
   display: flex;
   justify-content: space-between;
 }
-.todo-container .item-left,
+.todo-container .item-count-left,
 .todo-container .clear-completed {
   display: inline-block;
   padding: 2rem;
