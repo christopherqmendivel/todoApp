@@ -95,6 +95,7 @@ body {
   width: 100%;
   padding-left: 6rem;
   border-radius: 0.6rem;
+  color: hsl(234deg, 39%, 85%);
 }
 .form-todo .icon-add-list {
   font-size: 3rem;
