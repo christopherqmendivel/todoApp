@@ -8,15 +8,21 @@ var list_todo = document.querySelector('.list-todo');
 var list_todo_element = document.querySelectorAll('.list-todo li');
 
 
-// Events
-loadEventListeners();
-count_elementList();
+
+window.addEventListener('DOMContentLoaded', () => {
+
+    // Events
+    loadEventListeners();
+    count_elementList();
+
+});
+
 
 function loadEventListeners() {
 
     todo_ipt.addEventListener('mouseover', showIcon);
-    icon_addList.addEventListener('mouseover', showIcon);
     todo_ipt.addEventListener('mouseout', hideIcon);
+    icon_addList.addEventListener('mouseover', showIcon);
     form.addEventListener('submit', addList);
     list_todo.addEventListener('click', removeElement);
     list_todo.addEventListener('click', taskComplete);
@@ -76,15 +82,28 @@ function removeElement(e) {
 // Task Complete
 function taskComplete(e) {
 
+    let elementTask = e.target.parentElement.parentElement;
+
+
     if (e.target.classList.contains('circle') && !e.target.classList.contains('active')) {
+
+        elementTask.classList.add('completed');
         e.target.classList.add('active');
         e.target.nextElementSibling.style.textDecoration = 'line-through';
         e.target.nextElementSibling.style.color = '#777A92';
-    }
-    else {
-        e.target.classList.remove('active');
-        e.target.nextElementSibling.style.textDecoration = 'initial';
-        e.target.nextElementSibling.style.color = '';
+
+        count_elementList();
+
+    } else {
+        if (e.target.classList.contains('active') && elementTask.classList.contains('completed')) {
+
+            elementTask.classList.remove('completed');
+            e.target.classList.remove('active');
+            e.target.nextElementSibling.style.textDecoration = 'initial';
+            e.target.nextElementSibling.style.color = '';
+
+        count_elementList();
+        }
     }
 
 
@@ -95,11 +114,15 @@ function taskComplete(e) {
 function count_elementList() {
 
     let elementList = document.querySelector('.item-count-left');
-    elementList.innerHTML = `${list_todo.childElementCount} items left`;
+    let listProcess = document.querySelectorAll('li:not(.completed)').length;
+
+    elementList.innerHTML = `${listProcess} items left`;
+
+
 
 }
 
-// Show / hide icon 
+// Show / hide icon list
 function showIcon() {
     icon_addList.style.display = 'block';
 }
