@@ -86,6 +86,7 @@ body {
   position: absolute;
   z-index: 10;
   left: 1.7rem;
+  background-color: linear-gradient(hsl(192deg, 100%, 67%), hsl(280deg, 87%, 65%));
 }
 .form-todo .todo-ipt {
   padding: 2rem;
