@@ -30,6 +30,18 @@ body {
   background-color: hsl(235deg, 21%, 11%);
 }
 
+.container section {
+  width: 100%;
+  background: #000;
+  height: 30vh;
+  background-image: url(/images/bg-mobile-dark.jpg);
+  background-size: cover;
+}
+@media (min-width: 768px) {
+  .container section {
+    background-image: url(/images/bg-desktop-dark.jpg);
+  }
+}
 .container .form-todo,
 .container .todo-container,
 .container .filters {
@@ -41,15 +53,24 @@ body {
 .container .footer {
   transform: translateY(-8rem);
 }
+@media (min-width: 768px) {
+  .container .header, .container .form-todo, .container .todo-container, .container .filters {
+    max-width: 60rem;
+  }
+}
 
 .header {
-  background-image: url(/images/bg-mobile-dark.jpg);
-  background-size: cover;
   height: 30vh;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   padding: 0 2.5rem;
+}
+@media (min-width: 768px) {
+  .header {
+    margin: 0 auto;
+    padding: 0;
+  }
 }
 .header .h1-title,
 .header .btn {

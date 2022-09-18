@@ -7,7 +7,18 @@ body {
 }
 
 .container {
-
+    
+    section {
+        width: 100%;
+        background: #000;
+        height: 30vh;
+        background-image: url(/images/bg-mobile-dark.jpg);
+        background-size: cover;
+        @include m.tablet {
+            background-image: url(/images/bg-desktop-dark.jpg);
+        }
+    }
+    
     .form-todo,
     .todo-container,
     .filters {
@@ -20,18 +31,29 @@ body {
     .footer {
         transform: translateY(-8rem);
     }
+
+    .header, .form-todo, .todo-container, .filters {
+    
+        @include m.tablet {
+            max-width: 60rem;
+        }
+    }
 }
 
 // header styles
 .header {
     // mobile first
-    background-image: url(/images/bg-mobile-dark.jpg);
-    background-size: cover;
+
     height: 30vh;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     padding: 0 2.5rem;
+    
+    @include m.tablet {
+        margin: 0 auto;
+        padding: 0;
+    }
 
     .h1-title,
     .btn {
