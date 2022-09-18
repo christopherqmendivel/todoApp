@@ -6,15 +6,16 @@ var todo_ipt_content = document.querySelector('.todo-ipt').value;
 var icon_addList = document.querySelector('.icon-add-list');
 var list_todo = document.querySelector('.list-todo');
 var list_todo_element = document.querySelectorAll('.list-todo li');
-// let tasks = [];
-let tasks = [
-    {"id": 1, "task": "Complete online JavaScript course"},
-    {"id": 2, "task": "Jog around the park 3x"},
-    {"id": 3, "task": "10 minutes meditation"},
-    {"id": 4, "task": "Read for 1 hour"},
-    {"id": 5, "task": "Pick up groceries"},
-    {"id": 6, "task": "Complete Todo App on Frontend Mentor"},
-];
+let tasks = [];
+// let tasks = [
+//     {"id": 1, "task": "Complete online JavaScript course"},
+//     {"id": 2, "task": "Jog around the park 3x"},
+//     {"id": 3, "task": "10 minutes meditation"},
+//     {"id": 4, "task": "Read for 1 hour"},
+//     {"id": 5, "task": "Pick up groceries"},
+//     {"id": 6, "task": "Complete Todo App on Frontend Mentor"},
+// ];
+
 
 
 
@@ -29,10 +30,12 @@ function loadEventListeners() {
     icon_addList.addEventListener('mouseover', showIcon);
     form.addEventListener('submit', addList);
     list_todo.addEventListener('click', removeElement);
-    list_todo.addEventListener('click', taskComplete);
 
     document.addEventListener('DOMContentLoaded', load_listHTML);
+    
 }
+
+
 
 
 // Functions
@@ -52,7 +55,8 @@ function addList(e) {
         
         const taskObj = {
             id: lastValue,
-            task: task
+            task: task,
+            completed: false
         }
 
         // Add array tasks
@@ -93,6 +97,27 @@ function create_taskHTML() {
 
             spanCircle.classList.add('circle');
             spanList.classList.add('list');
+            spanCircle.onclick = () => {
+                
+                if (!task.completed) {
+                    
+                    task.completed = true;
+                    syncStorage();
+                    style_taskCompleted(spanCircle, spanList);
+                    
+                
+                } else {
+                    task.completed = false;
+                    syncStorage();
+                    style_taskCompleted(spanCircle, spanList);
+                    
+                }    
+            }
+
+            // Refresh style document loaded
+            task.completed == true ? style_taskCompleted(spanCircle, spanList) : ''
+    
+
 
             // Icon delete
             let imgCross = document.createElement('img');
@@ -112,54 +137,42 @@ function create_taskHTML() {
             li.appendChild(imgCross);
             list_todo.appendChild(li);
 
-            
         });
     }
     syncStorage();
     count_elementList();
-    
 }
 
 // Remove element
 function removeElement(id) {
-
-    tasks = tasks.filter ( task => task.id !== id);
-    
+    tasks = tasks.filter ( task => task.id !== id); 
 }
 
 
-// Task Complete
-function taskComplete(e) {
+// Style tasks completed
+function style_taskCompleted(circle, list) {
 
-    e.preventDefault();
 
-    let elementTask = e.target.parentElement.parentElement;
+    if (!circle.classList.contains("active")) {
 
-    if (e.target.classList.contains('circle') && !e.target.classList.contains('active')) {
-        
-
-        elementTask.classList.add('completed');
-        e.target.classList.add('active');
-        e.target.nextElementSibling.style.textDecoration = 'line-through';
-        e.target.nextElementSibling.style.color = '#777A92';
-        e.target.style.background = 'linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));';
-
+        circle.classList.add('active');
+        circle.style.background = 'linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));';
+        list.style.color = '#777A92';
+        list.style.textDecoration = 'line-through';
         count_elementList();
-
+        
+        console.log(circle, list);
     } else {
-        if (e.target.classList.contains('active') && elementTask.classList.contains('completed')) {
-
-            elementTask.classList.remove('completed');
-            e.target.classList.remove('active');
-            e.target.nextElementSibling.style.textDecoration = 'initial';
-            e.target.nextElementSibling.style.color = '';
-
-            count_elementList();
-        }
+        circle.classList.remove('active');
+        circle.style.background = '';
+        list.style.textDecoration = 'initial';
+        list.style.color = '';
+        count_elementList();
     }
 
-
 }
+
+
 
 // Add task to localStorage
 function syncStorage() {
@@ -170,7 +183,6 @@ function syncStorage() {
 function load_listHTML() {
     
     tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-    
     create_taskHTML();
 }
 
@@ -180,7 +192,7 @@ count_elementList();
 function count_elementList() {
 
     let elementList = document.querySelector('.item-count-left');
-    let listProcess = document.querySelectorAll('li:not(.completed)').length;
+    let listProcess = document.querySelectorAll('span.circle:not(.active)').length -1;
 
     elementList.innerHTML = `${listProcess} items left`;
 
