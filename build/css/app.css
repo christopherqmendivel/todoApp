@@ -26,13 +26,40 @@ a {
   text-decoration: none;
 }
 
-body {
+.dark-mode {
   background-color: hsl(235deg, 21%, 11%);
+}
+.dark-mode .form-todo .todo-ipt, .dark-mode .form-todo .circle, .dark-mode .form-todo .icon-add-list {
+  background-color: hsl(235deg, 24%, 19%);
+}
+.dark-mode .form-todo .circle {
+  border: 0.2rem solid hsl(234deg, 11%, 52%);
+}
+.dark-mode .form-todo .todo-ipt {
+  color: hsl(234deg, 39%, 85%);
+}
+.dark-mode .todo-container {
+  background-color: hsl(235deg, 24%, 19%);
+}
+.dark-mode .todo-container .list-todo .element {
+  border-bottom: 0.1rem solid hsl(237deg, 14%, 26%);
+}
+.dark-mode .todo-container .list-todo .element .list {
+  color: hsl(234deg, 39%, 85%);
+}
+.dark-mode .todo-container .list-todo .element .circle {
+  border: 0.2rem solid hsl(237deg, 14%, 26%);
+}
+.dark-mode .filters {
+  background-color: hsl(235deg, 24%, 19%);
+}
+
+body {
+  background-color: hsl(236deg, 33%, 92%);
 }
 
 .container section {
   width: 100%;
-  background: #000;
   height: 30vh;
   background-image: url(/images/bg-mobile-dark.jpg);
   background-size: cover;
@@ -66,15 +93,23 @@ body {
   align-items: flex-start;
   padding: 0 2.5rem;
 }
+@media (min-width: 480px) {
+  .header {
+    padding-top: 4rem;
+  }
+}
 @media (min-width: 768px) {
   .header {
     margin: 0 auto;
-    padding: 0;
+    padding: 4rem 0 0 0;
   }
 }
 .header .h1-title,
 .header .btn {
   padding-top: 5rem;
+}
+.header .light-mode-boton {
+  display: none;
 }
 .header .h1-title {
   font-size: 3.5rem;
@@ -91,18 +126,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: hsl(235deg, 24%, 19%);
   position: relative;
 }
 .form-todo .todo-ipt, .form-todo .circle, .form-todo .icon-add-list {
-  background-color: hsl(235deg, 24%, 19%);
+  background-color: hsl(0deg, 0%, 98%);
   transform: translateY(-11rem);
 }
 .form-todo .circle {
   display: inline-block;
   width: 2.5rem;
   height: 2.5rem;
-  border: 0.2rem solid hsl(237deg, 14%, 26%);
+  border: 0.2rem solid hsl(234deg, 39%, 85%);
   border-radius: 50%;
   position: absolute;
   z-index: 10;
@@ -117,7 +151,8 @@ body {
   width: 100%;
   padding-left: 6rem;
   border-radius: 0.6rem;
-  color: hsl(234deg, 39%, 85%);
+  color: hsl(235deg, 19%, 35%);
+  font-weight: 700;
 }
 .form-todo .icon-add-list {
   font-size: 3rem;
@@ -131,7 +166,7 @@ body {
 }
 
 .todo-container {
-  background-color: hsl(235deg, 24%, 19%);
+  background-color: hsl(0deg, 0%, 98%);
   border-radius: 0.6rem;
 }
 .todo-container .list-todo {
@@ -139,8 +174,8 @@ body {
 }
 .todo-container .list-todo .element {
   padding: 2rem;
-  color: hsl(0deg, 0%, 98%);
-  border-bottom: 0.1rem solid hsl(237deg, 14%, 26%);
+  color: hsl(234deg, 11%, 52%);
+  border-bottom: 0.1rem solid hsl(234deg, 39%, 85%);
   font-size: 1.4rem;
   display: flex;
   justify-content: space-between;
@@ -151,14 +186,16 @@ body {
   justify-content: center;
   align-items: center;
 }
-.todo-container .list-todo .element .first-element .list {
-  color: hsl(234deg, 39%, 85%);
+@media (min-width: 768px) {
+  .todo-container .list-todo .element .first-element .list {
+    font-weight: 700;
+  }
 }
 .todo-container .list-todo .element .circle {
   display: inline-block;
   width: 2.5rem;
   height: 2.5rem;
-  border: 0.2rem solid hsl(237deg, 14%, 26%);
+  border: 0.1rem solid hsl(234deg, 39%, 85%);
   border-radius: 50%;
   margin-right: 1.5rem;
   transition: 0.5s;
@@ -175,6 +212,7 @@ body {
 .todo-container .items-clear {
   display: flex;
   justify-content: space-between;
+  font-weight: 0 !important;
 }
 .todo-container .item-count-left,
 .todo-container .clear-completed {
@@ -184,7 +222,7 @@ body {
 }
 
 .filters {
-  background-color: hsl(235deg, 24%, 19%);
+  background-color: hsl(0deg, 0%, 98%);
   padding: 2rem;
   text-align: center;
   margin-top: 1rem !important;
@@ -193,7 +231,6 @@ body {
 .filters span {
   color: hsl(234deg, 11%, 52%);
   margin: 0 2rem;
-  font-weight: 700;
 }
 
 footer {

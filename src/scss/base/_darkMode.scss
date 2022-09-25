@@ -1,0 +1,41 @@
+@use '../base/variables' as v; 
+
+.dark-mode {
+
+    background-color: v.$darkBlue;
+
+
+    .form-todo {
+        .todo-ipt, .circle, .icon-add-list {
+            background-color: v.$dark_desaturatedBlue;
+        }
+        .circle {
+            border: .2rem solid v.$dark_grayishBlue;
+        }
+
+        .todo-ipt {
+            color: v.$light_grayishBlue;
+        }
+    }
+
+    .todo-container {
+        background-color: v.$dark_desaturatedBlue;
+
+        .list-todo {
+            .element {
+                border-bottom: .1rem solid v.$very_dark_grayishBlue;
+
+                .list {
+                    color: v.$light_grayishBlue;
+                }
+                .circle {
+                    border: .2rem solid v.$very_dark_grayishBlue;
+                }
+            }
+        }
+    }
+
+    .filters {
+        background-color: v.$dark_desaturatedBlue;
+    }
+}
