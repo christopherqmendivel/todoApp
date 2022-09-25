@@ -157,16 +157,17 @@ function style_taskCompleted(circle, list) {
 
         circle.classList.add('active');
         circle.style.background = 'linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));';
-        list.style.color = '#777A92';
+        list.style.color = ' hsl(235, 19%, 35%)';
         list.style.textDecoration = 'line-through';
+
         count_elementList();
         
-        console.log(circle, list);
     } else {
         circle.classList.remove('active');
         circle.style.background = '';
         list.style.textDecoration = 'initial';
         list.style.color = '';
+    
         count_elementList();
     }
 
@@ -207,6 +208,49 @@ function hideIcon() {
     icon_addList.style.display = 'none';
 }
 
+
+darkMode();
+// Dark Mode
+function darkMode() {
+
+    // const preferenceDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    // if (preferenceDarkMode.matches) {
+    //     document.body.classList.add('dark-mode');
+    // } else {
+    //     document.body.classList.remove('dark-mode');
+    // }
+
+    // preferenceDarkMode.addEventListener('change', function() {
+    //     if (preferenceDarkMode.matches) {
+    //         document.body.classList.add('dark-mode');
+    //     } else {
+    //         document.body.classList.remove('dark-mode');
+    //     }
+    // })
+
+    const btnDarkMode = document.querySelector('.moon-mode-boton');
+    const btnLight = document.querySelector('.light-mode-boton');
+    const body = document.body;
+
+    
+    btnDarkMode.addEventListener('click', function() {
+        
+        btnDarkMode.style.display = 'none';
+        btnLight.style.display = 'block';
+        document.body.classList.toggle('dark-mode');
+        
+    });
+
+    btnLight.addEventListener('click', function () {
+        
+        btnLight.style.display = '';
+        btnDarkMode.style.display = 'block';
+        document.body.classList.toggle('dark-mode');
+        
+    })
+   
+}
 
 // Clean HTML
 function cleanHTML() {
