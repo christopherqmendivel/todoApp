@@ -184,6 +184,11 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+@media (min-width: 992px) {
+  .todo-container .list-todo .element:hover .img_cross {
+    display: block;
+  }
+}
 .todo-container .list-todo .element .first-element {
   display: flex;
   justify-content: center;
@@ -211,6 +216,11 @@ body {
 }
 .todo-container .list-todo .element .img_cross {
   cursor: pointer;
+}
+@media (min-width: 992px) {
+  .todo-container .list-todo .element .img_cross {
+    display: none;
+  }
 }
 .todo-container .items-clear {
   display: flex;

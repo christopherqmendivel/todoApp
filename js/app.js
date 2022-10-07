@@ -114,7 +114,7 @@ function create_taskHTML() {
                 }    
             }
 
-            // Refresh style document loaded
+            // RESET STYLE ELEMENT AFTER LOADED DOM
             task.completed == true ? style_taskCompleted(spanCircle, spanList) : ''
     
 
