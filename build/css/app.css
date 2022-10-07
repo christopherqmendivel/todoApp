@@ -38,6 +38,9 @@ a {
 .dark-mode .form-todo .todo-ipt {
   color: hsl(234deg, 39%, 85%);
 }
+.dark-mode .form-todo .icon-add-list {
+  color: hsl(234deg, 39%, 85%);
+}
 .dark-mode .todo-container {
   background-color: hsl(235deg, 24%, 19%);
 }
@@ -159,7 +162,7 @@ body {
   position: absolute;
   z-index: 10;
   right: 1.7rem;
-  color: white;
+  color: hsl(235deg, 19%, 35%);
   border: none;
   cursor: pointer;
   display: none;
