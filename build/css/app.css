@@ -198,6 +198,9 @@ body {
   justify-content: center;
   align-items: center;
 }
+.todo-container .list-todo .element .first-element .list {
+  font-weight: 700;
+}
 @media (min-width: 992px) {
   .todo-container .list-todo .element .first-element .list {
     font-weight: 500;
