@@ -6,6 +6,8 @@ var todo_ipt_content = document.querySelector('.todo-ipt').value;
 var icon_addList = document.querySelector('.icon-add-list');
 var list_todo = document.querySelector('.list-todo');
 var list_todo_element = document.querySelectorAll('.list-todo li');
+
+
 let tasks = [];
 // let tasks = [
 //     {"id": 1, "task": "Complete online JavaScript course"},
@@ -151,22 +153,19 @@ function removeElement(id) {
 
 // Style tasks completed
 function style_taskCompleted(circle, list) {
-
-
-    if (!circle.classList.contains("active")) {
+    
+    if (!circle.classList.contains("active") ) {
 
         circle.classList.add('active');
-        circle.style.background = 'linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));';
-        list.style.color = ' hsl(235, 19%, 35%)';
-        list.style.textDecoration = 'line-through';
+        list.classList.add('completed_task');
 
+        // STYLE CIRCLE BG & TASK COMPLETED
         count_elementList();
         
     } else {
         circle.classList.remove('active');
-        circle.style.background = '';
-        list.style.textDecoration = 'initial';
-        list.style.color = '';
+        list.classList.remove('completed_task');
+        list.style.textDecoration = '';
     
         count_elementList();
     }
@@ -231,7 +230,6 @@ function darkMode() {
 
     const btnDarkMode = document.querySelector('.moon-mode-boton');
     const btnLight = document.querySelector('.light-mode-boton');
-    const body = document.body;
 
     
     btnDarkMode.addEventListener('click', function() {

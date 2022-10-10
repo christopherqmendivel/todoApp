@@ -1,4 +1,4 @@
-@use '../base/variables' as v; 
+@use '../base/variables'as v;
 
 .dark-mode {
 
@@ -6,9 +6,13 @@
 
 
     .form-todo {
-        .todo-ipt, .circle, .icon-add-list {
+
+        .todo-ipt,
+        .circle,
+        .icon-add-list {
             background-color: v.$dark_desaturatedBlue;
         }
+
         .circle {
             border: .2rem solid v.$dark_grayishBlue;
         }
@@ -16,6 +20,7 @@
         .todo-ipt {
             color: v.$light_grayishBlue;
         }
+
         .icon-add-list {
             color: v.$light_grayishBlue;
         }
@@ -29,11 +34,17 @@
                 border-bottom: .1rem solid v.$very_dark_grayishBlue;
 
                 .list {
-                    color: v.$light_grayishBlue;
+                    color: white;
                 }
+
+                .completed_task {
+                    color: v.$dark_grayishBlue;
+                }
+
                 .circle {
                     border: .2rem solid v.$very_dark_grayishBlue;
                 }
+
             }
         }
     }
@@ -41,4 +52,5 @@
     .filters {
         background-color: v.$dark_desaturatedBlue;
     }
+
 }

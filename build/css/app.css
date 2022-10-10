@@ -29,7 +29,9 @@ a {
 .dark-mode {
   background-color: hsl(235deg, 21%, 11%);
 }
-.dark-mode .form-todo .todo-ipt, .dark-mode .form-todo .circle, .dark-mode .form-todo .icon-add-list {
+.dark-mode .form-todo .todo-ipt,
+.dark-mode .form-todo .circle,
+.dark-mode .form-todo .icon-add-list {
   background-color: hsl(235deg, 24%, 19%);
 }
 .dark-mode .form-todo .circle {
@@ -48,7 +50,10 @@ a {
   border-bottom: 0.1rem solid hsl(237deg, 14%, 26%);
 }
 .dark-mode .todo-container .list-todo .element .list {
-  color: hsl(234deg, 39%, 85%);
+  color: white;
+}
+.dark-mode .todo-container .list-todo .element .completed_task {
+  color: hsl(234deg, 11%, 52%);
 }
 .dark-mode .todo-container .list-todo .element .circle {
   border: 0.2rem solid hsl(237deg, 14%, 26%);
@@ -177,7 +182,6 @@ body {
 }
 .todo-container .list-todo .element {
   padding: 2rem;
-  color: hsl(234deg, 11%, 52%);
   border-bottom: 0.1rem solid hsl(234deg, 39%, 85%);
   font-size: 1.4rem;
   display: flex;
@@ -194,9 +198,10 @@ body {
   justify-content: center;
   align-items: center;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .todo-container .list-todo .element .first-element .list {
-    font-weight: 700;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
   }
 }
 .todo-container .list-todo .element .circle {
@@ -208,6 +213,10 @@ body {
   margin-right: 1.5rem;
   transition: 0.5s;
   cursor: pointer;
+}
+.todo-container .list-todo .element .completed_task {
+  text-decoration: line-through;
+  color: hsl(234deg, 11%, 52%);
 }
 .todo-container .list-todo .element .first-element .active {
   background-image: url("/images/icon-check.svg"), linear-gradient(hsl(192deg, 100%, 67%), hsl(280deg, 87%, 65%));
